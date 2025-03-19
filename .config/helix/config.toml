@@ -1,0 +1,23 @@
+#theme = "ayu_mirage"
+theme = "catppuccin_macchiato"
+
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[keys.normal."backspace"]
+r = ":run-shell-command cargo run"
+s = [":w", ":config-reload"]
+c = ":config-open"
