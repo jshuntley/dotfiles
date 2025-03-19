@@ -41,5 +41,5 @@ cargo install zoxide
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ln -s $HOME/.local/kitty.app/bin/kitty $HOME/.local/bin/.
 ln -s $HOME/.local/kitty.app/bin/kitten $HOME/.local/bin/.
-
-# echo "" > $HOME/.config/kitty/
+wget https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.config/kitty/kitty.conf -O $HOME/.config/kitty/kitty.conf
+wget https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.config/kitty/current-theme.conf -O $HOME/.config/kitty/current-theme.conf
