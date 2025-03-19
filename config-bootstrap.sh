@@ -8,10 +8,9 @@ sudo apt update && sudo apt upgrade -y
 # install zsh and switch shells
 sudo apt install zsh
 
+# configure .zshrc
 cp ~/.zshrc ~/.zshrc.bak
-
-# TODO clone from git repo instead of hardcoding
-#.zshrc clone
+wget https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.zshrc -O ~/.zshrc
 
 sudo chsh -s $(which zsh) $(whoami)
 
@@ -23,8 +22,7 @@ cargo install zoxide
 
 # install Starship
 curl -sS https://starship.rs/install.sh | sh
-
-# starship.toml clone
+wget https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.config/starship.toml -O ~/.config/starship.toml
 
 source ~/.zshrc
 
@@ -35,7 +33,7 @@ source ~/.zshrc
 brew install helix eza lazygit
 
 # configure helix
-# git clone
+wget https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.config/helix/config.toml -O ~/.config/helix/config.toml
 
 # install and configure Kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
