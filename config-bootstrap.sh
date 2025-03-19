@@ -24,6 +24,8 @@ wget https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.confi
 
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> $HOME/.zshrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 source $HOME/.zshrc
 

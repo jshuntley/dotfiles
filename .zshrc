@@ -1,3 +1,5 @@
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 . "$HOME/.cargo/env"
 
 eval "$(zoxide init zsh)"
