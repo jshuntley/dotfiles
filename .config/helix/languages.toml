@@ -1,8 +1,40 @@
 [[language]]
 name = "c"
 scope = "source.c"
-file-types = ["c"]
+file-types = ["c", "h"]
 comment-token = "//"
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
 language-servers = ["clangd"]
+
+[[language]]
+name = "cpp"
+scope = "source.cpp"
+file-types = ["cpp", "hpp"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+language-servers = ["clang++"]
+
+[[language]]
+name = "html"
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+
+[[language]]
+name = "css"
+formatter = { command = 'prettier', args = ["--parser", "css"] }
+
+[[language]]
+name = "javascript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true

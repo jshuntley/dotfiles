@@ -1,0 +1,168 @@
+# Syntax highlighting
+# -------------------
+"attribute" = "green"
+
+"type" = "cyan"
+"type.enum.variant" = "teal"
+
+"constructor" = "green"
+
+"constant" = "cyan"
+"constant.character" = "cyan"
+"constant.character.escape" = "teal"
+
+"string" = "green"
+"string.regexp" = "teal"
+"string.special" = "blue"
+"string.special.symbol" = "red"
+
+"comment" = { fg = "overlay2" }
+
+"variable" = "text"
+"variable.parameter" = { fg = "teal" }
+"variable.builtin" = "blue"
+"variable.other.member" = "teal"
+
+"label" = "blue" # lifetimes etc.
+
+"punctuation" = "overlay2"
+"punctuation.special" = "cyan"
+
+"keyword" = "blue"
+"keyword.control.conditional" = { fg = "blue" }
+
+"operator" = "teal"
+
+"function" = "green"
+"function.macro" = "cyan"
+
+"tag" = "teal"
+
+"namespace" = { fg = "teal" }
+
+"special" = "blue" # fuzzy highlight
+
+# Headings lean cool instead of warm
+"markup.heading.1" = "blue"
+"markup.heading.2" = "cyan"
+"markup.heading.3" = "teal"
+"markup.heading.4" = "green"
+"markup.heading.5" = "blue"
+"markup.heading.6" = "teal"
+"markup.list" = "teal"
+"markup.list.unchecked" = "overlay2"
+"markup.list.checked" = "green"
+"markup.bold" = { fg = "blue", modifiers = ["bold"] }
+"markup.italic" = { fg = "teal", modifiers = ["italic"] }
+"markup.link.url" = { fg = "blue", modifiers = ["underlined"] }
+"markup.link.text" = "cyan"
+"markup.raw" = "green"
+"markup.quote" = "teal"
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "cyan"
+
+# User Interface
+# --------------
+"ui.background" = { fg = "text", bg = "none" }
+
+"ui.linenr" = { fg = "surface1" }
+"ui.linenr.selected" = { fg = "green" }
+
+"ui.statusline" = { fg = "subtext1", bg = "mantle" }
+"ui.statusline.inactive" = { fg = "surface2", bg = "mantle" }
+"ui.statusline.normal" = { fg = "base", bg = "blue", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "base", bg = "green", modifiers = ["bold"]  }
+"ui.statusline.select" = { fg = "base", bg = "cyan", modifiers = ["bold"]  }
+
+"ui.popup" = { fg = "text", bg = "surface0" }
+"ui.window" = { fg = "crust" }
+"ui.help" = { fg = "overlay2", bg = "surface0" }
+
+"ui.bufferline" = { fg = "subtext0", bg = "mantle" }
+"ui.bufferline.active" = { fg = "blue", bg = "base", underline = { color = "blue", style = "line" } }
+"ui.bufferline.background" = { bg = "crust" }
+
+"ui.text" = "text"
+"ui.text.focus" = { fg = "text", bg = "surface0", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "overlay1" }
+"ui.text.directory" = { fg = "blue" }
+
+"ui.virtual" = "overlay0"
+"ui.virtual.ruler" = { bg = "surface0" }
+"ui.virtual.indent-guide" = "surface0"
+"ui.virtual.inlay-hint" = { fg = "surface1", bg = "mantle" }
+"ui.virtual.jump-label" = { fg = "text", modifiers = ["bold"] }
+
+"ui.selection" = { bg = "surface1" }
+
+"ui.cursor" = { fg = "base", bg = "secondary_cursor" }
+"ui.cursor.primary" = { fg = "base", bg = "cyan" }
+"ui.cursor.match" = { fg = "cyan", modifiers = ["bold"] }
+
+"ui.cursor.primary.normal" = { fg = "base", bg = "cyan" }
+"ui.cursor.primary.insert" = { fg = "base", bg = "green" }
+"ui.cursor.primary.select" = { fg = "base", bg = "blue" }
+
+"ui.cursor.normal" = { fg = "base", bg = "secondary_cursor_normal" }
+"ui.cursor.insert" = { fg = "base", bg = "secondary_cursor_insert" }
+"ui.cursor.select" = { fg = "base", bg = "secondary_cursor" }
+
+"ui.cursorline.primary" = { bg = "cursorline" }
+
+"ui.highlight" = { bg = "surface1", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "overlay2", bg = "surface0" }
+"ui.menu.selected" = { fg = "text", bg = "surface1", modifiers = ["bold"] }
+
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "peach", style = "curl" } }
+"diagnostic.info" = { underline = { color = "cyan", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "teal", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+
+error = "red"
+warning = "peach"
+info = "cyan"
+hint = "teal"
+
+[palette]
+# Pastel-phthalo UI core
+text = "#D9EDE4"
+subtext1 = "#C6DDD3"
+subtext0 = "#AFCAC1"
+overlay2 = "#8FA79E"
+overlay1 = "#7B938A"
+overlay0 = "#6A837A"
+surface2 = "#44524B"
+surface1 = "#39453F"
+surface0 = "#2A322E"
+base = "#1B1F1C"
+mantle = "#1E2421"
+crust = "#181F1B"
+
+# Cool-spectrum accents (distinct)
+green   = "#5BAA89"  # moss
+teal    = "#3FA7A5"  # deep teal
+cyan    = "#4FC3DC"  # aqua
+blue    = "#5B8DEF"  # clear blue
+
+# Keep warm tones for diffs/errors, but secondary
+red     = "#E28C8C"
+maroon  = "#E39494"
+peach   = "#E8B48C"
+yellow  = "#D9D58A"
+
+# Unused/legacy Catppuccin slots (kept for compatibility, shifted cool)
+rosewater = "#DDE7E4"
+flamingo  = "#BDD7D3"
+pink      = "#B7D2D6"
+mauve     = "#9EC2E8"
+sapphire  = "#4FA6C8"
+lavender  = "#84B7F6"
+
+cursorline = "#233029"
+secondary_cursor = "#7BE495"
+secondary_cursor_normal = "#7BE495"
+secondary_cursor_insert = "#5BAA89"

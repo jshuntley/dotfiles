@@ -1,0 +1,30 @@
+general.import = [
+  # uncomment the flavour you want below:
+  # "~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+   # "~/.config/alacritty/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/catppuccin-mocha.toml"
+  "~/.config/alacritty/themes/phthalo-pastel.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[terminal.shell]
+program = "/bin/zsh"
+args = ["-l"]
+
+[window]
+dynamic_padding = true
+
+padding = {x = 2, y = 2}
+
+dimensions = {columns = 180, lines = 70}
+
+decorations = "Buttonless"
+opacity = 0.6
+blur = true
+
+[font]
+normal.family = "JetBrainsMono Nerd Font"
+size = 12
