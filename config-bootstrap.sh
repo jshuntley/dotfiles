@@ -5,8 +5,8 @@
 # Update
 sudo apt update && sudo apt upgrade -y
 
-# install zsh and switch shells
-sudo apt install zsh
+# install packages
+sudo apt install zsh tmux
 
 # configure .zshrc
 mv $HOME/.zshrc $HOME/.zshrc.bak
@@ -45,3 +45,7 @@ ln -s $HOME/.local/kitty.app/bin/kitty $HOME/.local/bin/.
 ln -s $HOME/.local/kitty.app/bin/kitten $HOME/.local/bin/.
 wget https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.config/kitty/kitty.conf -O $HOME/.config/kitty/kitty.conf
 wget https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.config/kitty/current-theme.conf -O $HOME/.config/kitty/current-theme.conf
+
+# configure tmux
+wget https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.tmux.conf -O $HOME/
+wget https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.tmux -O $HOME/

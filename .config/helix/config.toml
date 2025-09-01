@@ -1,4 +1,3 @@
-#theme = "ayu_mirage"
 theme = "catppuccin_macchiato"
 
 [editor]
@@ -21,3 +20,4 @@ render = true
 r = ":run-shell-command cargo run"
 s = [":w", ":config-reload"]
 c = ":config-open"
+
