@@ -1,7 +1,9 @@
-theme = "catppuccin_macchiato"
+#theme = "ayu_mirage"
+# theme = "catppuccin_macchiato"
+# theme = "phthalo_pastel"
+theme = "nord"
 
 [editor]
-line-number = "relative"
 cursorline = true
 color-modes = true
 
@@ -16,8 +18,11 @@ hidden = false
 [editor.indent-guides]
 render = true
 
-[keys.normal."backspace"]
+[keys.normal.backspace]
 r = ":run-shell-command cargo run"
 s = [":w", ":config-reload"]
 c = ":config-open"
+g = ":run-shell-command echo 'Hello, World!'"
 
+[keys.normal]
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]

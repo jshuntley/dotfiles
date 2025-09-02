@@ -1,0 +1,75 @@
+# Nord theme for Helix — based on arcticicestudio/nord
+
+# UI
+"ui.background"          = { bg = "none" }
+"ui.text"                = { fg = "fg" }
+"ui.cursor"              = { fg = "base", bg = "fg" }
+"ui.cursorline.primary"  = { bg = "line" }
+"ui.selection"           = { bg = "selection", fg = "fg" }
+"ui.selection.primary"   = { bg = "selection", fg = "fg" }
+"ui.statusline"          = { fg = "fg", bg = "surface" }
+"ui.statusline.inactive" = { fg = "dim_fg", bg = "surface" }
+"ui.linenr"              = { fg = "dim_fg", bg = "base" }
+"ui.linenr.selected"     = { fg = "blue", bg = "base", modifiers = ["bold"] }
+"ui.gutter"              = { fg = "dim_fg", bg = "base" }
+"ui.popup"               = { fg = "fg", bg = "surface" }
+"ui.popup.border"        = { fg = "blue" }
+"ui.menu"                = { fg = "fg", bg = "surface" }
+"ui.menu.selected"       = { fg = "base", bg = "blue", modifiers = ["bold"] }
+"ui.search"              = { fg = "base", bg = "cyan" }
+"ui.search.current"      = { fg = "base", bg = "orange" }
+
+"diagnostic"             = { error = "red", warning = "yellow", info = "cyan", hint = "blue" }
+
+# Syntax
+"comment"                = { fg = "dim_fg", modifiers = ["italic"] }
+"string"                 = { fg = "green" }
+"string.regex"           = { fg = "cyan" }
+"number"                 = { fg = "cyan" }
+"boolean"                = { fg = "cyan", modifiers = ["bold"] }
+
+"keyword"                = { fg = "purple", modifiers = ["bold"] }
+"keyword.control"        = { fg = "purple", modifiers = ["bold"] }
+"keyword.storage"        = { fg = "blue" }
+
+"operator"               = { fg = "fg" }
+"punctuation"            = { fg = "dim_fg" }
+
+"function"               = { fg = "blue" }
+"constructor"            = { fg = "blue" }
+"type"                   = { fg = "cyan" }
+"type.builtin"           = { fg = "cyan", modifiers = ["bold"] }
+
+"constant"               = { fg = "green" }
+"variable"               = { fg = "fg" }
+"variable.builtin"       = { fg = "red" }
+"namespace"              = { fg = "blue" }
+"attribute"              = { fg = "purple" }
+"tag"                    = { fg = "blue" }
+
+"error"                  = { fg = "red", modifiers = ["bold"] }
+"warning"                = { fg = "yellow", modifiers = ["bold"] }
+
+# Diffs
+"diff.plus"              = { fg = "green" }
+"diff.minus"             = { fg = "red" }
+"diff.delta"             = { fg = "blue" }
+
+# Palette
+[palette]
+base      = "#2e3440" # Nord0
+surface   = "#3b4252" # Nord1
+line      = "#434c5e" # Nord2
+selection = "#4c566a" # Nord3
+
+fg        = "#d8dee9" # Nord4
+dim_fg    = "#a5abb6" # blended dim text
+
+red       = "#bf616a" # Nord11
+orange    = "#ebcb8b" # Nord13
+yellow    = "#ebcb8b" # Nord13
+green     = "#a3be8c" # Nord14
+purple    = "#b48ead" # Nord15
+cyan      = "#88c0d0" # Nord8
+blue      = "#81a1c1" # Nord9
+

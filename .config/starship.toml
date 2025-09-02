@@ -25,25 +25,26 @@ $time\
 [ ](fg:color_base)\
 $line_break$character"""
 
-# Phthalo-green forward palette
 palette = 'colors'
 
 [palettes.colors]
-color_green = "#0B6E4F"    # phthalo-emerald core
-color_teal = "#188B5F"     # deep jungle green
-color_sky = "#2FA36B"      # emerald-lime midpoint
-color_sapphire = "#46B97A" # brighter fresh green
-color_blue = "#6CCF91"     # pale spring green (instead of true blue)
+# Nord accents mapped to your slots
+color_green    = "#A3BE8C"  # Nord14
+color_teal     = "#8FBCBB"  # Nord7
+color_sky      = "#88C0D0"  # Nord8
+color_sapphire = "#81A1C1"  # Nord9
+color_blue     = "#5E81AC"  # Nord10
 
 # Neutrals
-color_base = "#0D1410"     # near-black with green cast
-color_surface0 = "#112019" # dark moss for contrast text
-color_text = "#E5F7E8"     # pale mint text
+color_base     = "#2E3440"  # Nord0 (background)
+color_surface0 = "#3B4252"  # Nord1 (panel/segment bg)
+color_text     = "#D8DEE9"  # Nord4 (foreground)
 
-# Accents
-color_red = "#F06B6B"
-color_purple = "#B28BE0"
-color_yellow = "#D6DA6A"
+# Alerts
+color_red      = "#BF616A"  # Nord11
+color_purple   = "#B48EAD"  # Nord15
+color_yellow   = "#EBCB8B"  # Nord13
+
 
 [os]
 disabled = false
