@@ -1,0 +1,76 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.37/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "enable-synchronized-workspaces": true,
+  "default_workspace_padding": 4,
+  "default_container_padding": 4,
+  "border": true,
+  "border_width": 3,
+  "border_offset": -1,
+  "theme": {
+    "colours": {
+      "base_00": "#ffffff",
+      "base_01": "#3c3c3c",
+      "base_02": "#A3BE8C",
+      "base_03": "#8FBCBB",
+      "base_04": "#2E3440",
+      "base_05": "#3B4252",
+      "base_06": "#81A1C1",
+      "base_07": "#ffffff",
+      "base_08": "#ffffff",
+      "base_09": "#aaccaa",
+      "base_0a": "#ffffff",
+      "base_0b": "#ffffff",
+      "base_0c": "#ffffff",
+      "base_0d": "#ffffff",
+      "base_0e": "#ffffff",
+      "base_0f": "#ffffff"
+    },
+    "palette": "Custom",
+    "single_border": "Base02",
+    "stack_border": "Base02",
+    "name": "Nord",
+    "unfocused_border": "Base04",
+    "bar_accent": "Base02"
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "BSP"
+        },
+        {
+          "name": "2",
+          "layout": "BSP"
+        },
+        {
+          "name": "3",
+          "layout": "BSP"
+        },
+        {
+          "name": "4",
+          "layout": "BSP"
+        },
+        {
+          "name": "5",
+          "layout": "BSP"
+        },
+        {
+          "name": "6",
+          "layout": "BSP"
+        },
+        {
+          "name": "7",
+          "layout": "BSP"
+        },
+        {
+          "name": "8",
+          "layout": "BSP"
+        }
+      ]
+    }
+  ]
+}
