@@ -1,0 +1,256 @@
+# Fjord — Helix theme (Nord-based, full coverage)
+
+###############################################################################
+# UI
+###############################################################################
+
+# Background & separators
+"ui.background"                 = { fg = "fg", bg = "none" }
+"ui.background.separator"       = { fg = "line" }
+
+# Window & help
+"ui.window"                     = { fg = "line" }
+"ui.help"                       = { fg = "dim_fg", bg = "surface" }
+
+# Text
+"ui.text"                       = "fg"
+"ui.text.focus"                 = { fg = "fg", bg = "surface", modifiers = ["bold"] }
+"ui.text.inactive"              = { fg = "muted" }
+"ui.text.info"                  = { fg = "blue" }
+"ui.text.directory"             = { fg = "blue" }
+
+# Cursor
+"ui.cursor"                     = { fg = "base", bg = "fg" }
+"ui.cursor.normal"              = { fg = "base", bg = "fg" }
+"ui.cursor.insert"              = { fg = "base", bg = "cyan" }
+"ui.cursor.select"              = { fg = "base", bg = "purple" }
+"ui.cursor.match"               = { fg = "orange", modifiers = ["bold"] }
+
+# Primary cursor (when multiple carets exist)
+"ui.cursor.primary"             = { fg = "base", bg = "fg" }
+"ui.cursor.primary.normal"      = { fg = "base", bg = "fg" }
+"ui.cursor.primary.insert"      = { fg = "base", bg = "cyan" }
+"ui.cursor.primary.select"      = { fg = "base", bg = "purple" }
+
+# Cursorline/column
+"ui.cursorline.primary"         = { bg = "base_" }
+"ui.cursorline.secondary"       = { bg = "base_" }
+"ui.cursorcolumn.primary"       = { bg = "base_" }
+"ui.cursorcolumn.secondary"     = { bg = "base_" }
+
+# Gutter & line numbers
+"ui.gutter"                     = { fg = "dim_fg", bg = "none" }
+"ui.gutter.selected"            = { fg = "blue", bg = "none", modifiers = ["bold"] }
+"ui.linenr"                     = { fg = "dim_fg", bg = "none" }
+"ui.linenr.selected"            = { fg = "blue", bg = "none", modifiers = ["bold"] }
+
+# Statusline (and color modes)
+"ui.statusline"                 = { fg = "fg", bg = "surface" }
+"ui.statusline.inactive"        = { fg = "dim_fg", bg = "surface" }
+"ui.statusline.normal"          = { fg = "base", bg = "blue",   modifiers = ["bold"] }
+"ui.statusline.insert"          = { fg = "base", bg = "green",  modifiers = ["bold"] }
+"ui.statusline.select"          = { fg = "base", bg = "purple", modifiers = ["bold"] }
+"ui.statusline.separator"       = { fg = "line" }
+
+# Bufferline
+"ui.bufferline"                 = { fg = "fg", bg = "surface" }
+"ui.bufferline.active"          = { fg = "blue", bg = "base", underline = { color = "blue", style = "line" } }
+"ui.bufferline.background"      = { bg = "base" }
+
+# Popup & menu
+"ui.popup"                      = { fg = "fg", bg = "surface" }
+"ui.popup.info"                 = { fg = "fg", bg = "surface" }
+"ui.popup.border"               = { fg = "blue" }
+
+"ui.menu"                       = { fg = "fg", bg = "surface" }
+"ui.menu.selected"              = { fg = "base", bg = "blue", modifiers = ["bold"] }
+"ui.menu.scroll"                = { fg = "blue", bg = "line" }
+
+# Picker (files, symbols, etc.)
+"ui.picker.header"              = { fg = "fg",   bg = "surface" }
+"ui.picker.header.active"       = { fg = "base", bg = "blue", modifiers = ["bold"] }
+"ui.picker.header.column"       = { fg = "dim_fg", bg = "surface" }
+"ui.picker.header.column.active"= { fg = "base", bg = "blue", modifiers = ["bold"] }
+"ui.picker.list"                = { fg = "fg",   bg = "surface" }
+"ui.picker.selection"           = { fg = "base", bg = "blue" }
+"ui.picker.match"               = { fg = "orange", modifiers = ["bold"] }
+"ui.picker.border"              = { fg = "line" }
+
+# Virtual (guides, inlay hints, wrap, ruler, whitespace)
+"ui.virtual"                    = { fg = "muted" }
+"ui.virtual.ruler"              = { bg = "surface" }
+"ui.virtual.whitespace"         = { fg = "muted" }
+"ui.virtual.indent-guide"       = { fg = "muted" }
+"ui.virtual.wrap"               = { fg = "muted" }
+"ui.virtual.inlay-hint"         = { fg = "dim_fg", bg = "surface" }
+"ui.virtual.inlay-hint.parameter" = { fg = "cyan", bg = "surface" }
+"ui.virtual.inlay-hint.type"    = { fg = "blue", bg = "surface" }
+"ui.virtual.jump-label"         = { fg = "orange", modifiers = ["bold"] }
+
+# Selection & highlight
+"ui.selection"                  = { bg = "selection", fg = "fg" }
+"ui.selection.primary"          = { bg = "selection", fg = "fg" }
+"ui.highlight"                  = { bg = "line" }
+"ui.highlight.frameline"        = { fg = "yellow", bg = "surface", modifiers = ["bold"] }
+
+# Search
+"ui.search"                     = { fg = "base", bg = "cyan" }
+"ui.search.current"             = { fg = "base", bg = "orange" }
+
+# Debug (breakpoints etc.)
+"ui.debug.breakpoint"           = { fg = "red" }
+"ui.debug.active"               = { fg = "orange", modifiers = ["bold"] }
+
+# Diagnostics (gutter badges)
+"warning"                       = { fg = "yellow" }
+"error"                         = { fg = "red" }
+"info"                          = { fg = "cyan" }
+"hint"                          = { fg = "blue" }
+
+# Diagnostics (inline underlines/overlays)
+"diagnostic"                    = { underline = { style = "curl", color = "muted" } }
+"diagnostic.hint"               = { underline = { style = "curl", color = "blue" } }
+"diagnostic.info"               = { underline = { style = "curl", color = "cyan" } }
+"diagnostic.warning"            = { underline = { style = "curl", color = "yellow" } }
+"diagnostic.error"              = { underline = { style = "curl", color = "red" } }
+"diagnostic.unnecessary"        = { modifiers = ["dim"] }
+"diagnostic.deprecated"         = { modifiers = ["crossed_out"] }
+
+# Snippet tabstops/placeholders
+"tabstop"                       = { fg = "base", bg = "yellow" }
+
+###############################################################################
+# SYNTAX (tree-sitter)
+###############################################################################
+
+"attribute"                     = { fg = "purple" }
+
+"type"                          = { fg = "cyan" }
+"type.builtin"                  = { fg = "cyan", modifiers = ["bold"] }
+"type.parameter"                = { fg = "purple" }
+"type.enum"                     = { fg = "cyan" }
+"type.enum.variant"             = { fg = "blue" }
+
+"constructor"                   = { fg = "blue" }
+
+"constant"                      = { fg = "green" }
+"constant.builtin"              = { fg = "cyan", modifiers = ["bold"] }
+"constant.boolean"              = { fg = "cyan", modifiers = ["bold"] }
+"constant.character"            = { fg = "cyan" }
+"constant.character.escape"     = { fg = "purple" }
+"constant.numeric"              = { fg = "cyan" }
+"constant.numeric.integer"      = { fg = "cyan" }
+"constant.numeric.float"        = { fg = "cyan" }
+
+"string"                        = { fg = "green" }
+"string.regexp"                 = { fg = "cyan" }
+"string.special"                = { fg = "blue" }
+"string.special.path"           = { fg = "blue" }
+"string.special.url"            = { fg = "blue", modifiers = ["underlined"] }
+"string.special.symbol"         = { fg = "red" }
+
+"comment"                       = { fg = "dim_fg", modifiers = ["italic"] }
+"comment.line"                  = { fg = "dim_fg", modifiers = ["italic"] }
+"comment.line.documentation"    = { fg = "muted",  modifiers = ["italic"] }
+"comment.block"                 = { fg = "dim_fg", modifiers = ["italic"] }
+"comment.block.documentation"   = { fg = "muted",  modifiers = ["italic"] }
+"comment.unused"                = { fg = "muted",  modifiers = ["italic", "dim"] }
+
+"variable"                      = { fg = "fg" }
+"variable.other.member"         = { fg = "blue" }
+"variable.other.member.private" = { fg = "blue" }
+"variable.parameter"            = { fg = "blue" }
+"variable.builtin"              = { fg = "red" }
+
+"label"                         = { fg = "blue" }
+
+"punctuation"                   = { fg = "dim_fg" }
+"punctuation.delimiter"         = { fg = "dim_fg" }
+"punctuation.bracket"           = { fg = "dim_fg" }
+"punctuation.special"           = { fg = "cyan" }
+
+"keyword"                       = { fg = "purple", modifiers = ["bold"] }
+"keyword.control"               = { fg = "purple", modifiers = ["bold"] }
+"keyword.control.conditional"   = { fg = "purple", modifiers = ["bold"] }
+"keyword.control.repeat"        = { fg = "purple", modifiers = ["bold"] }
+"keyword.control.import"        = { fg = "purple", modifiers = ["bold"] }
+"keyword.control.return"        = { fg = "purple", modifiers = ["bold"] }
+"keyword.control.exception"     = { fg = "purple", modifiers = ["bold"] }
+"keyword.operator"              = { fg = "fg" }
+"keyword.directive"             = { fg = "orange" }
+"keyword.function"              = { fg = "blue" }
+"keyword.storage"               = { fg = "blue" }
+"keyword.storage.type"          = { fg = "cyan" }
+"keyword.storage.modifier"      = { fg = "purple" }
+
+"operator"                      = { fg = "fg" }
+
+"function"                      = { fg = "blue" }
+"function.builtin"              = { fg = "cyan" }
+"function.method"               = { fg = "blue" }
+"function.method.private"       = { fg = "blue" }
+"function.macro"                = { fg = "purple" }
+"function.special"              = { fg = "orange" }
+
+"tag"                           = { fg = "blue" }
+"tag.builtin"                   = { fg = "blue" }
+
+"namespace"                     = { fg = "blue" }
+
+"special"                       = { fg = "blue" }
+
+# Markup
+"markup.heading"                = { fg = "blue", modifiers = ["bold"] }
+"markup.heading.1"              = { fg = "red",    modifiers = ["bold"] }
+"markup.heading.2"              = { fg = "orange", modifiers = ["bold"] }
+"markup.heading.3"              = { fg = "yellow", modifiers = ["bold"] }
+"markup.heading.4"              = { fg = "green",  modifiers = ["bold"] }
+"markup.heading.5"              = { fg = "blue",   modifiers = ["bold"] }
+"markup.heading.6"              = { fg = "purple", modifiers = ["bold"] }
+"markup.marker"                 = { fg = "muted" }
+"markup.list"                   = { fg = "cyan" }
+"markup.list.unchecked"         = { fg = "muted" }
+"markup.list.checked"           = { fg = "green" }
+"markup.bold"                   = { modifiers = ["bold"] }
+"markup.italic"                 = { modifiers = ["italic"] }
+"markup.strikethrough"          = { modifiers = ["crossed_out"] }
+"markup.link"                   = { fg = "blue" }
+"markup.link.url"               = { fg = "blue", modifiers = ["underlined"] }
+"markup.link.label"             = { fg = "purple" }
+"markup.link.text"              = { fg = "blue" }
+"markup.quote"                  = { fg = "purple" }
+"markup.raw"                    = { fg = "green" }
+"markup.raw.inline"             = { fg = "green" }
+"markup.raw.block"              = { fg = "green" }
+
+# Diff
+"diff.plus"                     = { fg = "green" }
+"diff.plus.gutter"              = { fg = "green" }
+"diff.minus"                    = { fg = "red" }
+"diff.minus.gutter"             = { fg = "red" }
+"diff.delta"                    = { fg = "blue" }
+"diff.delta.gutter"             = { fg = "blue" }
+"diff.delta.moved"              = { fg = "purple" }
+"diff.conflict"                 = { fg = "orange", modifiers = ["bold"] }
+
+###############################################################################
+# PALETTE (Nord + your additions)
+###############################################################################
+[palette]
+base       = "#2e3440"   # Nord0
+base_      = "#2e344086" # semi-transparent guide overlay
+surface    = "#3b4252"   # Nord1
+line       = "#434c5e"   # Nord2
+selection  = "#4c566a"   # Nord3
+
+fg         = "#d8dee9"   # Nord4
+dim_fg     = "#a5abb6"   # blended dim text
+muted      = "#4c566a"   # Nord3 for muted/virtual
+
+red        = "#bf616a"   # Nord11
+orange     = "#f0bf5c"   # your warmer accent
+yellow     = "#ebcb8b"   # Nord13
+green      = "#a3be8c"   # Nord14
+purple     = "#b48ead"   # Nord15
+cyan       = "#88c0d0"   # Nord8
+blue       = "#81a1c1"   # Nord9

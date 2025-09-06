@@ -1,7 +1,4 @@
-#theme = "ayu_mirage"
-# theme = "catppuccin_macchiato"
-# theme = "phthalo_pastel"
-theme = "nord"
+theme = "fjord"
 
 [editor]
 cursorline = true

@@ -33,7 +33,7 @@ bars:
     widgets:
       left: ["win_button", "komorebi_workspaces"]
       center: ["active_window"]
-      right: ["clock", "cpu", "memory", "volume", "power_menu"]
+      right: ["clock", "weather", "pomodoro", "cpu", "memory", "volume", "power_menu"]
 widgets:
   media:
     type: "yasb.media.MediaWidget"
@@ -189,12 +189,13 @@ widgets:
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
+      units: "imperial"
       label: "<span>{icon}</span> {temp}"
       label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: "3bf4cf9a7c3f40d6b31174128242807" # Get your free API key from https://www.weatherapi.com/
+      api_key: "03675232357345e6afc202527253008" # Get your free API key from https://www.weatherapi.com/
       update_interval: 600 # Update interval in seconds, Min 600 seconds
       hide_decimal: true
-      location: "Los Angeles, CA, USA" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      location: "Kennewick, WA, USA" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
       callbacks:
         on_left: "toggle_label"
       icons:
@@ -304,3 +305,45 @@ widgets:
       class_name: "system-widget"
       callbacks:
         on_left: "exec start_menu"
+  pomodoro:
+    type: "yasb.pomodoro.PomodoroWidget"
+    options:
+      label: "<span>{icon}</span> {remaining}"
+      label_alt: "<span>{icon}</span> {session}/{total_sessions} - {status}"
+      work_duration: 25
+      break_duration: 5
+      long_break_duration: 15
+      long_break_interval: 4
+      auto_start_breaks: true
+      auto_start_work: true
+      sound_notification: true
+      show_notification: true
+      hide_on_break: false
+      session_target: 8
+      icons:
+        work: "\uf252"
+        break: "\uf253"
+        paused: "\uf254"
+    menu:
+      blur: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "System"
+      alignment: "right"
+      direction: "down"
+      offset_top: 6
+      offset_left: 0
+      circle_background_color: "#09ffffff"
+      circle_work_progress_color: "#88c0d0"
+      circle_break_progress_color: "#a3be8c"
+      circle_thickness: 8
+      circle_size: 160
+    callbacks:
+      on_left: "toggle_menu"
+      on_middle: "reset_timer"
+      on_right: "toggle_label"
+    label_shadow:
+      enabled: true
+      color: "black"
+      radius: 3
+      offset: [ 1, 1 ]  
