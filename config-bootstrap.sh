@@ -30,7 +30,7 @@ backup "$HOME/.zshrc"
 wget -q https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.zshrc -O "$HOME/.zshrc" || true
 
 # Set default shell to zsh (non-interactive)
-if [[ "$(echo $SHELL)" != "$(command -v zsh)" ]]; then
+if "$(echo $SHELL)" != "$(command -v zsh)"; then
   log "Setting default shell to zsh"
   chsh -s "$(command -v zsh)" "$USER" || sudo chsh -s "$(command -v zsh)" "$USER" || true
 fi
