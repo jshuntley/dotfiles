@@ -4,7 +4,7 @@ A lazy way to bootstrap my config files.
 
 ## Bootstrap Script
 ```
-curl -s https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/config-bootstrap.sh | sh
+curl -s https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/config-bootstrap.sh | bash
 ```
 
 ## Update Script
