@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
-set -euo pipefail
+# shellcheck shell=bash
+
+if [ -z "${BASH_VERSION:-}" ]; then
+  echo "This script must be run with bash, not sh." >&2
+  exec bash "$0" "$@"
+fi
+
+set -eu
+(set -o pipefail) 2>/dev/null && set -o pipefail
 
 # ------- Helpers -------
 log() { printf "\n\033[1;36m==> %s\033[0m\n" "$*"; }
@@ -15,7 +23,8 @@ log "Preparing directories"
 mkdir -p "$HOME/.local/bin" "$HOME/.config/helix"
 
 # Ensure ~/.local/bin is on PATH for current and future shells
-if ! grep -q 'PATH=.*\.local/bin' "$HOME/.zshrc" 2>/dev/null; then
+# Use a targeted grep to check if ~/.local/bin is already exported
+if ! grep -Eq '(^|\s)export PATH="?\$HOME/.local/bin:?[^"]*"?(:?\$PATH)?"?' "$HOME/.zshrc" 2>/dev/null; then
   echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.zshrc"
 fi
 
@@ -29,21 +38,21 @@ log "Installing .zshrc"
 backup "$HOME/.zshrc"
 wget -q https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.zshrc -O "$HOME/.zshrc" || true
 
-# Set default shell to zsh (non-interactive)
-if "$(echo $SHELL)" != "$(command -v zsh)"; then
+# Set default shell to zsh 
+if [[ "${SHELL:-}" != "$(command -v zsh)" ]]; then
   log "Setting default shell to zsh"
   chsh -s "$(command -v zsh)" "$USER" || sudo chsh -s "$(command -v zsh)" "$USER" || true
 fi
 
-# ------- Rust (non-interactive) -------
+# ------- Rust -------
 if ! command -v rustup >/dev/null 2>&1; then
-  log "Installing Rust (rustup) non-interactively"
+  log "Installing Rust (rustup)"
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   # shellcheck source=/dev/null
   source "$HOME/.cargo/env"
 fi
 
-# ------- Starship (non-interactive) -------
+# ------- Starship -------
 if ! command -v starship >/dev/null 2>&1; then
   log "Installing Starship"
   curl -fsSL https://starship.rs/install.sh | sh -s -- -y
@@ -90,7 +99,7 @@ fc-cache -f "$NF_DIR" || true
 log "Configuring Helix"
 wget -q https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.config/helix/config.toml -O "$HOME/.config/helix/config.toml" || true
 
-# ------- zoxide via cargo (fast) -------
+# ------- zoxide via cargo -------
 if ! command -v zoxide >/dev/null 2>&1; then
   log "Installing zoxide via cargo"
   cargo install zoxide || true
@@ -100,27 +109,25 @@ if ! command -v zoxide >/dev/null 2>&1; then
 fi
 
 # ------- Kitty terminal -------
-# if [[ ! -d "$HOME/.local/kitty.app" ]]; then
-#   log "Installing Kitty"
-#   curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-# fi
+if [[ ! -d "$HOME/.local/kitty.app" ]]; then
+  log "Installing Kitty"
+  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+fi
 
-# ln -sf "$HOME/.local/kitty.app/bin/kitty"  "$HOME/.local/bin/kitty"
-# ln -sf "$HOME/.local/kitty.app/bin/kitten" "$HOME/.local/bin/kitten"
+ln -sf "$HOME/.local/kitty.app/bin/kitty"  "$HOME/.local/bin/kitty"
+ln -sf "$HOME/.local/kitty.app/bin/kitten" "$HOME/.local/bin/kitten"
 
-# log "Configuring Kitty"
-# wget -q https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.config/kitty/kitty.conf -O "$HOME/.config/kitty/kitty.conf" || true
-# wget -q https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.config/kitty/current-theme.conf -O "$HOME/.config/kitty/current-theme.conf" || true
+log "Configuring Kitty"
+wget -q https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.config/kitty/kitty.conf -O "$HOME/.config/kitty/kitty.conf" || true
+wget -q https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.config/kitty/current-theme.conf -O "$HOME/.config/kitty/current-theme.conf" || true
 
 # ------- tmux config -------
 log "Configuring tmux"
 backup "$HOME/.tmux.conf"
 wget -q https://raw.githubusercontent.com/jshuntley/dotfiles/refs/heads/main/.tmux.conf -O "$HOME/.tmux.conf" || true
 
-# If you actually keep a .tmux directory in your repo, fetch it via git (wget can’t fetch directories)
-# Example:
-# git clone --depth=1 https://github.com/jshuntley/dotfiles /tmp/dotfiles
-# rsync -a /tmp/dotfiles/.tmux/ "$HOME/.tmux/"
+git clone --depth=1 https://github.com/jshuntley/dotfiles /tmp/dotfiles
+rsync -a /tmp/dotfiles/.tmux/ "$HOME/.tmux/"
 
 # ------- Final touch -------
 log "Done. Loading zsh environment"
